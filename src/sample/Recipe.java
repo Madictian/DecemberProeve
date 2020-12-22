@@ -3,12 +3,22 @@ package sample;
 import java.util.ArrayList;
 
 public class Recipe {
+    //todo lots of instance variables
     private ArrayList<Ingredient> list = new ArrayList<>();
     private String name;
     private double amount;
     private String measurement;
     private String description;
     private double timeNeeded;
+    private double portions;
+
+    public double getPortions() {
+        return portions;
+    }
+
+    public void setPortions(double portions) {
+        this.portions = portions;
+    }
 
     public String getName() {
         return name;
@@ -84,6 +94,26 @@ public class Recipe {
         this.showIngredients();
         this.showProcess();
         System.out.println("\n");
+    }
+
+    public double countCalories(){
+        double totalCals = 0;
+        for (int i = 0; i < list.size(); i++) {
+            totalCals += list.get(i).getCalories();
+        }
+        return totalCals;
+    }
+
+    public double caloriesPerPortion()throws  ArithmeticException{
+        double totalcal = 0;
+        try {
+            totalcal = this.countCalories() / portions;
+
+        }catch (ArithmeticException ex){
+            System.out.println("nonono, you can't have 0 calories in that");
+        }
+        System.out.println(totalcal);
+        return totalcal;
     }
 
 }

@@ -1,6 +1,14 @@
 package sample;
 
 public class Ingredient {
+
+    enum diet{
+        GLUTEN,
+        SUGAR,
+        MEAT
+    }
+
+    diet Diet = diet.GLUTEN;
     private String name;
     private double calories;
 
@@ -36,6 +44,11 @@ public class Ingredient {
             System.out.println(this.getName() + " is not calorie heavy");
             return false;
         }
+    }
+    public double countCalories(){
+
+
+        return this.getCalories();
     }
 
 
