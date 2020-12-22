@@ -105,19 +105,19 @@ public class Recipe {
         return totalCals;
     }
 
-    public double caloriesPerPortion(){
+    public int caloriesPerPortion(){
 //todo Exception
         double totalcal = 0;
         try {
 
-            totalcal = this.countCalories() / this.portions;
+            totalcal = (int)this.countCalories() / this.portions;
             //totalcal = 0/0;
 
         }catch (ArithmeticException ex){
             System.out.println("nonono, you can't have 0 calories in that");
         }
         System.out.println(totalcal);
-        return totalcal;
+        return (int)totalcal;
     }
 
 }
