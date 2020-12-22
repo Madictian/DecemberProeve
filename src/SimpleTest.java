@@ -2,6 +2,12 @@ import sample.Ingredient;
 import sample.IngredientsDetails;
 import sample.Recipe;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.Writer;
+import java.util.Scanner;
+
 public class SimpleTest {
     public static void main(String[] args) {
         System.out.println("hello there user");
@@ -55,6 +61,29 @@ public class SimpleTest {
 
         glaze.setPortions(0);
         glaze.caloriesPerPortion();
+
+
+
+    }
+
+    //todo quick concept on persistence.
+    @Override
+    public String showIngredients(){
+        String book = "";
+        for (int i = 0; i < list.size(); i++) {
+            book = list.get(i).getName() + " " + list.get()i.getAmount + " " + list.get(i).getMeasurement();
+
+        }
+        return book;
+    }
+    void saveForADoC() throws FileNotFoundException {
+        java.io.File file = new File("name");
+        Scanner input = new Scanner(file);
+
+        for (int i = 0; i < listOfRecipes; i++) {
+            Writer fileWriter = new FileWriter("name", true);
+            fileWriter.write(recipe.getName + "\n" + showIngredients() + "\n" + recipe.getDescription);
+        }
 
     }
     public static void blankLine(){
