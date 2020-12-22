@@ -1,4 +1,5 @@
 import sample.Ingredient;
+import sample.IngredientsDetails;
 import sample.Recipe;
 
 public class SimpleTest {
@@ -23,8 +24,30 @@ public class SimpleTest {
         tea.showIngredients();
         glaze.showIngredients();
 
+        glaze.setDescription("- you're gonna want to mix the powdered sugar and water, and then coat the cake");
+        tea.setDescription("- you dip the teabag with leaves in it into the boiling water. wait 2 minutes and done");
+
+        blankLine();
+
+        glaze.showProcess();
+        tea.showProcess();
+
+        blankLine();
+
+        glaze.showRecipe();
+
+        tea.showRecipe();
+
+        IngredientsDetails sausage = new IngredientsDetails(1,1,1);
+        sausage.setName("sausage");
+        IngredientsDetails lemons = new IngredientsDetails(100, 0,0);
+        lemons.setName("lemons");
+
+        sausage.goodForColds();
+        lemons.goodForColds();
+
     }
-    public void blankLine(){
+    public static void blankLine(){
         System.out.println("\n");
     }
 

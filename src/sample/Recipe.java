@@ -76,4 +76,14 @@ public class Recipe {
         }
     }
 
+    public void showProcess(){
+        System.out.println(description);
+    }
+
+    public void showRecipe(){
+        this.showIngredients();
+        this.showProcess();
+        System.out.println("\n");
+    }
+
 }

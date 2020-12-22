@@ -28,6 +28,16 @@ public class Ingredient {
     public Ingredient() {
     }
 
+    public boolean calorieHeavy(){
+        if (calories >= 100){
+            System.out.println(this.getName() + " is calorie heavy");
+            return true;
+        } else {
+            System.out.println(this.getName() + " is not calorie heavy");
+            return false;
+        }
+    }
+
 
 
 
