@@ -3,20 +3,20 @@ package sample;
 import java.util.ArrayList;
 
 public class Recipe {
-    //todo lots of instance variables
+    //todo lots of type variables
     private ArrayList<Ingredient> list = new ArrayList<>();
     private String name;
     private double amount;
     private String measurement;
     private String description;
     private double timeNeeded;
-    private double portions;
+    private int portions;
 
-    public double getPortions() {
+    public int getPortions() {
         return portions;
     }
 
-    public void setPortions(double portions) {
+    public void setPortions(int portions) {
         this.portions = portions;
     }
 
@@ -101,13 +101,17 @@ public class Recipe {
         for (int i = 0; i < list.size(); i++) {
             totalCals += list.get(i).getCalories();
         }
+        System.out.println(totalCals);
         return totalCals;
     }
 
-    public double caloriesPerPortion()throws  ArithmeticException{
+    public double caloriesPerPortion(){
+//todo Exception
         double totalcal = 0;
         try {
-            totalcal = this.countCalories() / portions;
+
+            totalcal = this.countCalories() / this.portions;
+            //totalcal = 0/0;
 
         }catch (ArithmeticException ex){
             System.out.println("nonono, you can't have 0 calories in that");

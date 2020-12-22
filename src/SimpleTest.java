@@ -46,8 +46,12 @@ public class SimpleTest {
         sausage.goodForColds();
         lemons.goodForColds();
 
+        blankLine();
+
         water.countCalories();
         glaze.countCalories();
+
+        blankLine();
 
         glaze.setPortions(0);
         glaze.caloriesPerPortion();
